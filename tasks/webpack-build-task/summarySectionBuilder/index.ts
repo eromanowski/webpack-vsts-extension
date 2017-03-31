@@ -48,11 +48,13 @@ const createWebpackResultMarkdownFile = (workingFolder: string, result: IWebpack
     resultFileContent += `\t+ ${hiddenModulesCount} hidden modules  ${os.EOL}`;
 
     for (let warning of result.warnings) {
+        //console.log("Warning: {warning}");
         warning = warning.replace("\n", `  ${os.EOL}`);
         resultFileContent += `WARNING IN ${warning}  ${os.EOL}`;
     }
 
     for (let error of result.errors) {
+        //console.log(error);
         error = error.replace("\n", `  ${os.EOL}`);
         resultFileContent += `ERROR IN ${error}  ${os.EOL}`;
     }
